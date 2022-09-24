@@ -17,4 +17,4 @@
 
 ## 3.GitHub での MarkDown の差分イメージ
 
-![参考](./difference_markldown.png)
+![参考](/ref/difference_marklown.png)

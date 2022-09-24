@@ -1,5 +1,4 @@
-'use strict';
-
+"use strict";
 
 /**
  * ユーザーの作成
@@ -8,27 +7,26 @@
  * body User Created user object (optional)
  * returns User
  **/
-exports.createUser = function(body) {
-  return new Promise(function(resolve, reject) {
+exports.createUser = function (body) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
-    examples['application/json'] = {
-  "firstName" : "太郎",
-  "lastName" : "りそな",
-  "password" : "12345",
-  "userStatus" : 1,
-  "phone" : "12345",
-  "id" : 10,
-  "email" : "resona.taro@email.com",
-  "username" : "りそな太郎"
-};
+    examples["application/json"] = {
+      firstName: "太郎",
+      lastName: "山田",
+      password: "12345",
+      userStatus: 1,
+      phone: "12345",
+      id: 10,
+      email: "yamada.taro@email.com",
+      username: "山田太郎",
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
       resolve();
     }
   });
-}
-
+};
 
 /**
  * 指定されたユーザーを削除する
@@ -37,76 +35,76 @@ exports.createUser = function(body) {
  * userId String The name that needs to be deleted
  * no response value expected for this operation
  **/
-exports.deleteUser = function(userId) {
-  return new Promise(function(resolve, reject) {
+exports.deleteUser = function (userId) {
+  return new Promise(function (resolve, reject) {
     resolve();
   });
-}
-
+};
 
 /**
  * 指定されたユーザーの詳細情報を取得する
  *
- * userId String The name that needs to be fetched. Use user1 for testing. 
+ * userId String The name that needs to be fetched. Use user1 for testing.
  * returns User
  **/
-exports.getUserByName = function(userId) {
-  return new Promise(function(resolve, reject) {
+exports.getUserByName = function (userId) {
+  return new Promise(function (resolve, reject) {
     var examples = {};
-    examples['application/json'] = {
-  "firstName" : "太郎",
-  "lastName" : "りそな",
-  "password" : "12345",
-  "userStatus" : 1,
-  "phone" : "12345",
-  "id" : 10,
-  "email" : "resona.taro@email.com",
-  "username" : "りそな太郎"
-};
+    examples["application/json"] = {
+      firstName: "太郎",
+      lastName: "山田",
+      password: "12345",
+      userStatus: 1,
+      phone: "12345",
+      id: 10,
+      email: "yamada.taro@email.com",
+      username: "山田太郎",
+    };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
       resolve();
     }
   });
-}
-
+};
 
 /**
  * ログインしているユーザーに紐づく利用先のユーザー情報を全て取得する
  *
  * returns UserList
  **/
-exports.getUsersByCompany = function() {
-  return new Promise(function(resolve, reject) {
+exports.getUsersByCompany = function () {
+  return new Promise(function (resolve, reject) {
     var examples = {};
-    examples['application/json'] = [ {
-  "firstName" : "太郎",
-  "lastName" : "りそな",
-  "password" : "12345",
-  "userStatus" : 1,
-  "phone" : "12345",
-  "id" : 10,
-  "email" : "resona.taro@email.com",
-  "username" : "りそな太郎"
-}, {
-  "firstName" : "太郎",
-  "lastName" : "りそな",
-  "password" : "12345",
-  "userStatus" : 1,
-  "phone" : "12345",
-  "id" : 10,
-  "email" : "resona.taro@email.com",
-  "username" : "りそな太郎"
-} ];
+    examples["application/json"] = [
+      {
+        firstName: "太郎",
+        lastName: "山田",
+        password: "12345",
+        userStatus: 1,
+        phone: "12345",
+        id: 10,
+        email: "yamada.taro@email.com",
+        username: "山田太郎",
+      },
+      {
+        firstName: "太郎",
+        lastName: "山田",
+        password: "12345",
+        userStatus: 1,
+        phone: "12345",
+        id: 10,
+        email: "yamada.taro@email.com",
+        username: "山田太郎",
+      },
+    ];
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
     } else {
       resolve();
     }
   });
-}
-
+};
 
 /**
  * 指定されたユーザーの詳細情報を更新する
@@ -116,9 +114,8 @@ exports.getUsersByCompany = function() {
  * userId String name that need to be deleted
  * no response value expected for this operation
  **/
-exports.updateUser = function(body,userId) {
-  return new Promise(function(resolve, reject) {
+exports.updateUser = function (body, userId) {
+  return new Promise(function (resolve, reject) {
     resolve();
   });
-}
-
+};

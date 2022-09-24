@@ -12,15 +12,15 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-  - url: https://1stop.com/api/v1
+- url: https://1stop.com/api/v1
 tags:
-  - name: users
-    description: ユーザーに対する操作
+- name: users
+  description: ユーザーに対する操作
 paths:
   /users:
     get:
       tags:
-        - users
+      - users
       summary: ログインしているユーザーに紐づく利用先のユーザー情報を全て取得する
       description: ""
       operationId: getUsersByCompany
@@ -30,7 +30,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/UserList"
+                $ref: '#/components/schemas/UserList'
         "400":
           description: Invalid username supplied
         "404":
@@ -38,7 +38,7 @@ paths:
       x-swagger-router-controller: Users
     post:
       tags:
-        - users
+      - users
       summary: ユーザーの作成
       description: This can only be done by the logged in user.
       operationId: createUser
@@ -47,38 +47,38 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"
+              $ref: '#/components/schemas/User'
       responses:
         default:
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
+                $ref: '#/components/schemas/User'
       x-swagger-router-controller: Users
   /user/{userId}:
     get:
       tags:
-        - users
+      - users
       summary: 指定されたユーザーの詳細情報を取得する
       description: ""
       operationId: getUserByName
       parameters:
-        - name: userId
-          in: path
-          description: "The name that needs to be fetched. Use user1 for testing. "
-          required: true
-          style: simple
-          explode: false
-          schema:
-            type: string
+      - name: userId
+        in: path
+        description: 'The name that needs to be fetched. Use user1 for testing. '
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
       responses:
         "200":
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
+                $ref: '#/components/schemas/User'
         "400":
           description: Invalid username supplied
         "404":
@@ -86,44 +86,44 @@ paths:
       x-swagger-router-controller: Users
     put:
       tags:
-        - users
+      - users
       summary: 指定されたユーザーの詳細情報を更新する
       description: This can only be done by the logged in user.
       operationId: updateUser
       parameters:
-        - name: userId
-          in: path
-          description: name that need to be deleted
-          required: true
-          style: simple
-          explode: false
-          schema:
-            type: string
+      - name: userId
+        in: path
+        description: name that need to be deleted
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
       requestBody:
         description: Update an existent user in the store
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/User"
+              $ref: '#/components/schemas/User'
       responses:
         default:
           description: successful operation
       x-swagger-router-controller: Users
     delete:
       tags:
-        - users
+      - users
       summary: 指定されたユーザーを削除する
       description: This can only be done by the logged in user.
       operationId: deleteUser
       parameters:
-        - name: userId
-          in: path
-          description: The name that needs to be deleted
-          required: true
-          style: simple
-          explode: false
-          schema:
-            type: string
+      - name: userId
+        in: path
+        description: The name that needs to be deleted
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
       responses:
         "400":
           description: Invalid username supplied
@@ -155,9 +155,9 @@ components:
           description: Order Status
           example: approved
           enum:
-            - placed
-            - approved
-            - delivered
+          - placed
+          - approved
+          - delivered
         complete:
           type: boolean
       xml:
@@ -178,7 +178,7 @@ components:
             name: addresses
             wrapped: true
           items:
-            $ref: "#/components/schemas/Address"
+            $ref: '#/components/schemas/Address'
       xml:
         name: customer
     Address:
@@ -254,7 +254,7 @@ components:
     UserList:
       type: array
       items:
-        $ref: "#/components/schemas/User"
+        $ref: '#/components/schemas/User'
     Tag:
       type: object
       properties:
@@ -267,8 +267,8 @@ components:
         name: tag
     Pet:
       required:
-        - name
-        - photoUrls
+      - name
+      - photoUrls
       type: object
       properties:
         id:
@@ -279,7 +279,7 @@ components:
           type: string
           example: doggie
         category:
-          $ref: "#/components/schemas/Category"
+          $ref: '#/components/schemas/Category'
         photoUrls:
           type: array
           xml:
@@ -293,14 +293,14 @@ components:
           xml:
             wrapped: true
           items:
-            $ref: "#/components/schemas/Tag"
+            $ref: '#/components/schemas/Tag'
         status:
           type: string
           description: pet status in the store
           enum:
-            - available
-            - pending
-            - sold
+          - available
+          - pending
+          - sold
       xml:
         name: pet
     ApiResponse:
@@ -314,14 +314,14 @@ components:
         message:
           type: string
       xml:
-        name: "##default"
+        name: '##default'
   requestBodies:
     Pet:
       description: Pet object that needs to be added to the store
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/Pet"
+            $ref: '#/components/schemas/Pet'
     UserArray:
       description: List of user object
       content:
@@ -329,7 +329,7 @@ components:
           schema:
             type: array
             items:
-              $ref: "#/components/schemas/User"
+              $ref: '#/components/schemas/User'
   securitySchemes:
     petstore_auth:
       type: oauth2

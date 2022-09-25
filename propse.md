@@ -22,7 +22,7 @@
 
 ---
 
-## 2. 主な設計書とフォーマット
+## 2. AP の主な設計書とフォーマット
 
 | No. | 工程     | 領域     | 設計書                            | フォーマット                                |
 | --: | -------- | -------- | --------------------------------- | ------------------------------------------- |
@@ -60,10 +60,20 @@
 - テキスト量や列数が多くなく、かつ高頻度で修正される設計書に最適と思われる
   - 例）メッセージ一覧、マスタデータ定義書など
 - GitHub では、プレビューによる差分確認がわかりやすい。
-- ![参考](/ref/difference_marklown.png)
+  ![参考](/ref/difference_marklown.png)
 - [参考][実際の差分確認はここから](https://github.com/Hiroyuki1995/Github-test/commit/234b41f8587c51e29f8f04e8e0a2e8cd949fc342?short_path=5ea635c#diff-5ea635c4751145ee2cbbb88a6f5b8ed38adc3d193472383360af4e00953c1584)
 
-### 3-2. Swagger
+### 3-2. plantUML
+
+- UML の図をプレーンテキストで表現可能
+- 独自の文法で記載する必要はあるが、サンプルコードは HP にもあり、文法は比較的簡単。
+- 初めて以下の業務フローを作成したが 15 分程度で作成できた。サンプルコードは[こちら](./business_flow_plantuml.pu)
+  ![サンプル](./business_flow_plantuml.svg)
+- プレビュー表示・画像出力には Java のインストールは必要。
+- 業務フローや機能設計書のフロー図などの設計書に有効。
+- [参考][ホームページ](https://plantuml.com/)
+
+### 3-3. Swagger
 
 - YAML または JSON ファイルで API の IF の仕様を定義することで、Web 画面からプレビューでリクエスト・レスポンスがわかりやすく表記される（ANSER BizSOL の OpenAPI の仕様書もこれを利用している）
 - プレーンテキストのため、Git での変更管理は容易
@@ -78,7 +88,7 @@ npm start
 - [参考][swaggerで作成されたbizsol api仕様書](https://portal.opencanvas.ne.jp/api/apilist/anserbizsolv13/)
 - [参考][api 仕様を定義できる swagger editor](https://editor.swagger.io/)
 
-### 3-3. Draw.io
+### 3-4. Draw.io
 
 - オブジェクトを活用した図形を作成するツール
 - メインは Web ツールだったが、VSCode の拡張機能で VSCode でも編集が可能に

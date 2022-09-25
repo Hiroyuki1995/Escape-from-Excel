@@ -18,7 +18,7 @@
   - <span style="color:#f00">同時に複数人がファイルのどこかを修正した場合、Git による自動マージができない</span>
 - 機能が多く、フリーフォーマットがゆえに、記載方法がばらばらになりがち
 
-[参考][生産技術部でもなんらかの取り組みがある模様](https://www.nttdata.com/jp/ja/data-insight/2021/0602/)
+[参考][生産技術部でもいろいろ取り組みがなされているよう](https://www.nttdata.com/jp/ja/data-insight/2021/0602/)
 
 ---
 
